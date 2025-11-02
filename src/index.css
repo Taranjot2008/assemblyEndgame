@@ -1,0 +1,154 @@
+@import 'tailwindcss';
+
+:root {
+  --language-font: 'SUSE Mono';
+  --root-color: #242424;
+
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: var(--root-color);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.heading-title, .points-counter {
+  font-family: 'Sansation';
+}
+
+.newGame-btn{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.correct{
+  background-color: var(--color-green-500);
+}
+
+.wrong{
+  background-color: var(--color-red-500);
+}
+
+.language-card{
+  min-width: 120px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-semibold);
+  font-family: var(--language-font);
+  border-radius: var(--radius-sm);
+  position: relative;
+}
+
+.lost::before{
+  content: '☠️';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.95rem;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.active{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gameWon{
+  background-color: #8AC926;
+}
+
+.gameLost{
+  background-color: var(--color-red-600);
+}
+
+button:disabled{
+  opacity: 0.7;
+  cursor: not-allowed;
+  color: var(--color-gray-300);
+}
+
+.missed-letter{
+  color: var(--color-red-500);
+}
+
+@media (width < 40rem) {
+  .language-card {
+    font-size: var(--text-sm);
+    min-width: 80px;
+  }
+}
+
+@media (width <= 320px) {
+
+  .heading-title {
+    font-size: var(--text-3xl);
+    margin-top: 44px;
+  }
+
+  .description {
+    font-size: 12px;
+  }
+
+  .languages {
+    gap: 4px;
+  }
+
+  .language-card {
+    font-size: 12px;
+    min-width: 65px;
+  }
+
+  .keyboard {
+    padding: 0 10px;
+    gap: 4px;
+  }
+
+  .key-letter {
+    font-size: 14px;
+    min-width: 32px;
+  }
+}
+
+@media (width <= 375px) {
+
+  .heading-title {
+    font-size: var(--text-4xl);
+    margin-top: 44px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  .languages {
+    gap: 8px;
+  }
+
+  .language-card {
+    font-size: 14px;
+    min-width: 80px;
+  }
+
+  .keyboard {
+    padding: 0 8px;
+    gap: 6px;
+  }
+
+  .key-letter {
+    font-size: 16px;
+  }
+}
